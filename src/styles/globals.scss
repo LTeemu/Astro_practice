@@ -1,0 +1,14 @@
+@font-face {
+  font-family: 'MilkyHoney';
+  src: url('/fonts/MilkyHoney.ttf');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+html {
+		font-family: 'MilkyHoney', sans-serif;
+		font-size: 1rem;
+		font-size: clamp(1rem, 0.9285714285714286rem + 0.35714285714285715vw, 1.5rem);
+		color: seashell;
+}

@@ -1,0 +1,95 @@
+---
+const links = [
+  { name: 'Home', href: '/' },
+  { name: 'About', href: '/about' },
+  { name: 'Contact', href: '/contact' },
+]
+---
+
+<header>
+  <nav>
+    <!--Navbar + desktop links-->
+    <div class="z-20 px-6 py-3 bg-gray-900 relative flex justify-between items-center">
+      <p class="text-2xl">Logo</p>
+
+      <ul class="gap-3 hidden sm:flex">
+        {
+          links.map((link) => {
+            return (
+              <li>
+                <a href={link.href}>{link.name}</a>
+              </li>
+            )
+          })
+        }
+      </ul>
+
+      <button id="hamburger" class="w-10 h-10 relative sm:hidden">
+        <span class="hamburgerBar"></span>
+        <span class="hamburgerBar"></span>
+        <span class="hamburgerBar"></span>
+      </button>
+    </div>
+
+    <!--Mobile nav links-->
+    <ul
+      id="mobileNav"
+      class="text-xl flex flex-col w-full gap-2 p-1.5 right-0 sm:hidden z-10 -translate-y-full overflow-hidden transition-all duration-500 absolute backdrop-brightness-[0.8] bg-gray-900"
+    >
+      {
+        links.map((link) => {
+          return (
+            <li>
+              <a class="bg-slate-800 py-1 flex flex-1 justify-center" href={link.href}>
+                {link.name}
+              </a>
+            </li>
+          )
+        })
+      }
+    </ul>
+  </nav>
+
+  <script>
+    document.getElementById('hamburger').addEventListener('click', () => {
+      document.querySelector('#mobileNav').classList.toggle('open')
+      document.querySelectorAll('.hamburgerBar').forEach((item) => {
+        item.classList.toggle('cross')
+      })
+    })
+  </script>
+</header>
+
+<style lang="scss">
+  //HamburgerBars default
+  .hamburgerBar {
+    @apply transition-all duration-500 h-1/5 block absolute w-full rounded-md;
+    &:nth-child(1) {
+      @apply top-0 bg-[#a77932];
+    }
+    &:nth-child(2) {
+      @apply top-1/2 -translate-y-1/2 bg-[#633200];
+    }
+    &:nth-child(3) {
+      @apply bottom-0 bg-[#a77932];
+    }
+  }
+
+  //HamburgerBars cross
+  .cross {
+    &:nth-child(1) {
+      @apply -rotate-45 top-1/2 -translate-y-1/2;
+    }
+    &:nth-child(2) {
+      @apply rotate-45;
+    }
+    &:nth-child(3) {
+      @apply -rotate-45 bottom-1/2 translate-y-1/2;
+    }
+  }
+
+  //MobileNav open
+  .open {
+    @apply transition-all duration-500 translate-y-0;
+  }
+</style>
