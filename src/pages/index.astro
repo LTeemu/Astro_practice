@@ -16,7 +16,7 @@ import Layout from '../layouts/Layout.astro'
         </p>
       </div>
 
-      <div class="order-1 md:order-2 md:col-span-2 relative overflow-hidden">
+      <div class="order-1 md:order-2 md:col-span-2 relative overflow-hidden aspect-square">
         <div class="grid place-content-end">
           <lottie-player
             src="https://assets2.lottiefiles.com/packages/lf20_ENkSMPrrrn.json"
@@ -24,6 +24,7 @@ import Layout from '../layouts/Layout.astro'
             speed="0.3"
             loop
             autoplay
+            aria-placeholder="Loading..-"
             class="max-w-full right-0 top-0 max-h-full"
           >
           </lottie-player>
