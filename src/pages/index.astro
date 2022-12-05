@@ -3,5 +3,43 @@ import Layout from '../layouts/Layout.astro'
 ---
 
 <Layout title="Home">
-  <h1>Home</h1>
+  <div>
+    <div
+      class="md:grid-cols-4 w-screen grid after:absolute after:w-[96vw] after:h-1 pb-1 after:rounded-md after:backdrop-brightness-125 after:bottom-0 after:right-[2vw] relative"
+    >
+      <div class="order-2 px-8 pb-10 md:pb-0 md:order-1 md:col-span-2 place-content-center grid md:-mr-[15vw]">
+        <h1 class="text-3xl">Home</h1>
+        <p class="pt-2">
+          The softest Christmas package in the world lies beneath the tree, waiting to be unwrapped. The knife was in me when I cut it open, and my hands were
+          shaking as I tried opening it and pulling out the ribbon. Then I saw it: the red bow. And I felt the tears coming down my face, because I thought I
+          would never be able to unwrap it again.
+        </p>
+      </div>
+
+      <div class="order-1 md:order-2 md:col-span-2 relative">
+        <di class="grid place-content-end">
+          <lottie-player
+            src="https://assets2.lottiefiles.com/packages/lf20_ENkSMPrrrn.json"
+            background="transparent"
+            speed="0.3"
+            loop
+            autoplay
+            class="max-w-full right-0 top-0 max-h-full"
+          >
+          </lottie-player>
+          <lottie-player
+            src="https://assets3.lottiefiles.com/packages/lf20_any3s17u.json"
+            background="transparent"
+            speed="0.5"
+            loop
+            autoplay
+            class="max-w-full -right-[15%] top-0 max-h-full absolute"
+          >
+          </lottie-player>
+        </di>
+      </div>
+    </div>
+  </div>
 </Layout>
+
+<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
